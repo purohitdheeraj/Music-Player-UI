@@ -1,6 +1,5 @@
-### Music Player App
+### Music Player App - Dev Branch
 
-#### // To check latest Updated Project Check Dev Branch of this repository
 
 - GraphQL Integration
 - Vanilla CSS
