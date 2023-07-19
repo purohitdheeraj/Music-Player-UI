@@ -9,37 +9,59 @@ body {
 	margin: 0 auto;
 	border: 0.5px solid #454545;
 	background: linear-gradient(#201606, #000000);
-	overflow: hidden;
 }
 
 /* layout container */
 
-/* grid-template-columns:
-		minmax(150px, 1fr) minmax(432px, 2fr)
-		minmax(480px, 2fr); */
-
 .layout {
 	color: #fff;
 	display: grid;
-	height: 100vh;
-	grid-template-areas: "navbar sidebar sidebar sidebar player player";
+	grid-template-areas:
+		"player player"
+		"navbar navbar"
+		"sidebar sidebar";
+}
+
+.layout > * {
+	padding: 3.2rem;
+}
+
+.sidebar {
+	grid-area: sidebar;
+}
+
+.navbar {
+	grid-area: navbar;
+}
+
+.player {
+	grid-area: player;
+	height: 50rem;
 }
 
 .layout > * {
 	border: 0.5px solid #454545;
 }
 
-.sidebar {
-	grid-area: sidebar;
-	padding: 3.2rem 1.6rem;
-}
+@media (min-width: 768px) {
+	.layout {
+		color: #fff;
+		display: grid;
+		height: 100vh;
+		grid-template-rows: auto;
+		grid-template-areas: "navbar sidebar player player";
+	}
 
-.player {
-	grid-area: player;
-	padding: 10rem 16rem;
-}
+	.sidebar {
+		padding: 3.2rem 1.6rem;
+	}
 
-.navbar {
-	grid-area: navbar;
-	padding: 3.2rem 9.8rem 0 3.2rem;
+	.player {
+		padding: 10rem 16rem;
+		height: auto;
+	}
+
+	.navbar {
+		padding: 3.2rem;
+	}
 }
