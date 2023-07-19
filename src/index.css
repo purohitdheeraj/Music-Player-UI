@@ -1,3 +1,8 @@
+@font-face {
+	font-family: "Basier Circle";
+	src: url("./fonts/fontStyle/basiercircle-regular.otf");
+}
+
 /* global styles */
 html {
 	font-size: 62.5%;
@@ -7,8 +12,9 @@ body {
 	font-size: 1.6rem;
 	max-width: 1512px;
 	margin: 0 auto;
-	border: 0.5px solid #454545;
+	/* border: 0.5px solid #454545; */
 	background: linear-gradient(#201606, #000000);
+	font-family: "Basier Circle", sans-serif;
 }
 
 /* layout container */
@@ -16,31 +22,32 @@ body {
 .layout {
 	color: #fff;
 	display: grid;
+	/* grid-template-rows: 20rem 50rem 30rem; */
 	grid-template-areas:
 		"player player"
 		"navbar navbar"
 		"sidebar sidebar";
 }
 
-.layout > * {
-	padding: 3.2rem;
-}
-
 .sidebar {
 	grid-area: sidebar;
+	padding: 1.6rem;
 }
 
 .navbar {
 	grid-area: navbar;
+	padding: 1.6rem;
+	padding-bottom: 0;
 }
 
 .player {
 	grid-area: player;
 	height: 50rem;
+	padding: 1.6rem;
 }
 
 .layout > * {
-	border: 0.5px solid #454545;
+	/* border: 0.5px solid #454545; */
 }
 
 @media (min-width: 768px) {
@@ -49,7 +56,7 @@ body {
 		display: grid;
 		height: 100vh;
 		grid-template-rows: auto;
-		grid-template-areas: "navbar sidebar player player";
+		grid-template-areas: "navbar sidebar player";
 	}
 
 	.sidebar {
@@ -60,7 +67,6 @@ body {
 		padding: 10rem 16rem;
 		height: auto;
 	}
-
 	.navbar {
 		padding: 3.2rem;
 	}

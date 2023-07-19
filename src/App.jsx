@@ -5,7 +5,6 @@ import {
 	Route,
 } from "react-router-dom";
 
-import "./App.css";
 import {
 	ForUser,
 	TopTracks,
@@ -14,6 +13,7 @@ import {
 } from "./pages";
 
 import { Layout } from "./components";
+import "./App.css";
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
