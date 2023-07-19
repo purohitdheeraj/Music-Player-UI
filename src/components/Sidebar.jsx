@@ -1,5 +1,8 @@
+import { useOutlet } from "react-router-dom";
+
 function Sidebar() {
-	return <div>Sidebar</div>;
+	const outlet = useOutlet();
+	return <section className="sidebar">{outlet}</section>;
 }
 
 export default Sidebar;

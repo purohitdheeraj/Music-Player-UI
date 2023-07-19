@@ -1,11 +1,13 @@
-import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
+import Player from "./Player";
+import Sidebar from "./Sidebar";
 
 function Layout() {
 	return (
 		<section className="layout">
 			<Navbar />
-			<Outlet />
+			<Sidebar />
+			<Player />
 		</section>
 	);
 }

@@ -3,12 +3,12 @@ import logo from "../assets/logo.png";
 
 function Navbar() {
 	return (
-		<aside>
+		<aside className="navbar">
 			<div>
 				<img src={logo} alt="app logo" />
 			</div>
 
-			<nav className="nav">
+			<nav>
 				<ul>
 					<li>
 						<NavLink

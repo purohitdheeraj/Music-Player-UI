@@ -1,5 +1,5 @@
 function Player() {
-	return <div>Player</div>;
+	return <section className="player">Player</section>;
 }
 
 export default Player;
