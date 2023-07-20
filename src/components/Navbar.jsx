@@ -1,11 +1,16 @@
 import { NavLink } from "react-router-dom";
 import logo from "../assets/logo.png";
+import profile from "../assets/dheeraj-profile.jpg";
 
 function Navbar() {
 	return (
 		<aside className="navbar">
-			<div>
-				<img src={logo} alt="app logo" />
+			<div className="logo-wrapper">
+				<img
+					className="logo-image"
+					src={logo}
+					alt="app logo"
+				/>
 			</div>
 
 			<nav>
@@ -13,7 +18,7 @@ function Navbar() {
 					<li>
 						<NavLink
 							className={({ isActive }) => {
-								isActive ? "active" : "";
+								return isActive ? "active" : "";
 							}}
 							to="/"
 						>
@@ -23,7 +28,7 @@ function Navbar() {
 					<li>
 						<NavLink
 							className={({ isActive }) => {
-								isActive ? "active" : "";
+								return isActive ? "active" : "";
 							}}
 							to="/toptracks"
 						>
@@ -33,7 +38,7 @@ function Navbar() {
 					<li>
 						<NavLink
 							className={({ isActive }) => {
-								isActive ? "active" : "";
+								return isActive ? "active" : "";
 							}}
 							to="/favorites"
 						>
@@ -43,7 +48,7 @@ function Navbar() {
 					<li>
 						<NavLink
 							className={({ isActive }) => {
-								isActive ? "active" : "";
+								return isActive ? "active" : "";
 							}}
 							to="recentlyPlayed"
 						>
@@ -52,6 +57,20 @@ function Navbar() {
 					</li>
 				</ul>
 			</nav>
+
+			<div className="avatar-wrapper">
+				<a
+					href="https://peerlist.io/purohitdheeraj"
+					target="_blank"
+					rel="noreferrer"
+				>
+					<img
+						className="avatar-image"
+						src={profile}
+						alt="app logo"
+					/>
+				</a>
+			</div>
 		</aside>
 	);
 }
