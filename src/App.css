@@ -98,7 +98,6 @@ img {
 }
 
 .foruser-page .search {
-	max-width: 400px;
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
@@ -137,7 +136,7 @@ img {
 .music-list-item {
 	display: flex;
 	align-items: center;
-	padding: 1.6rem;
+	padding: 1.6rem 0;
 	gap: 1.6rem;
 }
 

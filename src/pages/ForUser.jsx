@@ -81,6 +81,32 @@ function ForUser() {
 						</div>
 						<p className="music-duration">4:16</p>
 					</div>
+
+					<div className="music-list-item">
+						<img
+							className="music-image"
+							src={demo}
+							alt="title"
+						/>
+						<div className="music-info">
+							<h4>Music title</h4>
+							<p>Album Name</p>
+						</div>
+						<p className="music-duration">4:16</p>
+					</div>
+
+					<div className="music-list-item">
+						<img
+							className="music-image"
+							src={demo}
+							alt="title"
+						/>
+						<div className="music-info">
+							<h4>Music title</h4>
+							<p>Album Name</p>
+						</div>
+						<p className="music-duration">4:16</p>
+					</div>
 				</div>
 			</div>
 		</>
