@@ -58,8 +58,14 @@ body {
 
 	.player {
 		padding: 10rem 16rem;
+		max-width: 36rem;
 	}
+
 	.navbar {
 		padding: 3.2rem;
+		position: sticky;
+		top: 0;
+		bottom: 6.4rem;
+		height: 90vh;
 	}
 }

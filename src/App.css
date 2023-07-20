@@ -170,7 +170,6 @@ img {
 .player {
 	display: flex;
 	flex-direction: column;
-	max-width: 48rem;
 }
 
 .player h2 {
@@ -191,7 +190,7 @@ img {
 	width: 100%;
 }
 
-.cover-image{
+.cover-image {
 	width: 100%;
 }
 
