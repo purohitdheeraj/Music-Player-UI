@@ -166,6 +166,44 @@ img {
 	opacity: 0.6;
 }
 
+/* player */
+.player {
+	display: flex;
+	flex-direction: column;
+	max-width: 48rem;
+}
+
+.player h2 {
+	font-size: 3.2rem;
+	font-weight: 700;
+	line-height: 3.6rem;
+	margin: 0;
+}
+
+.player p {
+	font-size: 1.6rem;
+	opacity: 0.6;
+	margin-top: 8px;
+}
+
+.player-cover {
+	margin-top: 3.2rem;
+	width: 100%;
+}
+
+.cover-image{
+	width: 100%;
+}
+
+.input-seek-player {
+	margin-top: 2.4rem;
+}
+.player-controls {
+	margin-top: 3.2rem;
+	display: flex;
+	justify-content: space-between;
+}
+
 @media (min-width: 768px) {
 	.navbar ul {
 		flex-direction: column;
