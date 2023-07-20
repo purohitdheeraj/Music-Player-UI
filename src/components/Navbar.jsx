@@ -59,11 +59,17 @@ function Navbar() {
 			</nav>
 
 			<div className="avatar-wrapper">
-				<img
-					className="avatar-image"
-					src={profile}
-					alt="app logo"
-				/>
+				<a
+					href="https://peerlist.io/purohitdheeraj"
+					target="_blank"
+					rel="noreferrer"
+				>
+					<img
+						className="avatar-image"
+						src={profile}
+						alt="app logo"
+					/>
+				</a>
 			</div>
 		</aside>
 	);
