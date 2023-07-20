@@ -82,6 +82,91 @@ img {
 	width: 100%;
 }
 
+/* Sidebar */
+
+.foruser-page {
+	/* border: 1px solid; */
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.foruser-page .page-heading {
+	margin-top: 0;
+	font-size: 3.2rem;
+	line-height: 36px;
+}
+
+.foruser-page .search {
+	max-width: 400px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.input-search {
+	width: 90%;
+	outline: none;
+	border: none;
+	line-height: 2.8rem;
+	font-size: 1.8rem;
+	border-radius: 8px 0 0 8px;
+	display: block;
+	background: rgba(255, 255, 255, 0.08);
+	color: #fff;
+	padding: 8px 16px;
+}
+
+.search-logo {
+	width: 3.2rem;
+	display: flex;
+	border-radius: 0 8px 8px 0;
+	background: rgba(255, 255, 255, 0.08);
+	cursor: pointer;
+	padding: 0 8px;
+}
+
+/* music list - data */
+.music-list {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	margin-top: 2.5rem;
+}
+
+.music-list-item {
+	display: flex;
+	align-items: center;
+	padding: 1.6rem;
+	gap: 1.6rem;
+}
+
+.music-image {
+	width: 4.8rem;
+	height: 4.8rem;
+	border-radius: 50%;
+}
+
+.music-info h4 {
+	font-size: 1.8rem;
+	line-height: 2.4rem;
+	margin: 0;
+	font-weight: 400;
+}
+
+.music-info p {
+	font-size: 1.4rem;
+	opacity: 0.6;
+	line-height: 2.4rem;
+}
+
+.music-duration {
+	margin-left: auto;
+	font-size: 1.8rem;
+	line-height: 2.4rem;
+	opacity: 0.6;
+}
+
 @media (min-width: 768px) {
 	.navbar ul {
 		flex-direction: column;
