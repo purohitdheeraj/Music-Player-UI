@@ -3,6 +3,12 @@
 	src: url("./fonts/fontStyle/basiercircle-regular.otf");
 }
 
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
 /* global styles */
 html {
 	font-size: 62.5%;
@@ -22,15 +28,17 @@ body {
 	color: #fff;
 	display: grid;
 	min-height: 100vh;
+	min-width: 24rem;
 	grid-template-areas:
-		"player player"
-		"navbar navbar"
-		"sidebar sidebar";
+		"player player player"
+		"navbar navbar navbar"
+		"sidebar sidebar sidebar";
 }
 
 .sidebar {
 	grid-area: sidebar;
 	padding: 1.6rem;
+	/* width: 90%; */
 }
 
 .navbar {
@@ -44,7 +52,7 @@ body {
 	padding: 1.6rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
 	.layout {
 		color: #fff;
 		display: grid;
@@ -58,14 +66,14 @@ body {
 
 	.player {
 		padding: 10rem 16rem;
-		max-width: 36rem;
+		min-width: 48rem;
 	}
 
 	.navbar {
 		padding: 3.2rem;
 		position: sticky;
 		top: 0;
-		bottom: 6.4rem;
-		height: 90vh;
+		bottom: 3.2rem;
+		height: 100vh;
 	}
 }
