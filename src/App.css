@@ -104,7 +104,6 @@ img {
 .input-search {
 	outline: none;
 	border: none;
-	/* display: block; */
 	width: 100%;
 	line-height: 2.8rem;
 	font-size: 1.8rem;
@@ -183,16 +182,9 @@ img {
 	margin-top: 8px;
 }
 
-.player,
-.sidebar,
-.navbar {
-	width: 85%;
-	justify-self: center;
-}
-
-
 .player-cover {
 	margin-top: 3.2rem;
+	max-width: 100%;
 }
 
 .input-seek-player {
@@ -204,7 +196,7 @@ img {
 	justify-content: space-between;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
 	.navbar ul {
 		flex-direction: column;
 	}
@@ -212,11 +204,5 @@ img {
 	.navbar {
 		display: flex;
 		flex-direction: column;
-	}
-
-
-	.player {
-		width: 100%;
-		justify-self: center;
 	}
 }
