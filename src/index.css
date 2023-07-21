@@ -17,8 +17,8 @@ html {
 
 body {
 	font-size: 1.6rem;
-	max-width: 1512px;
 	margin: 0 auto;
+	max-width: 158rem;
 	font-family: "Basier Circle", sans-serif;
 }
 
@@ -28,11 +28,11 @@ body {
 	color: #fff;
 	display: grid;
 	min-height: 100vh;
-	min-width: 32rem;
+	grid-template-columns: minmax(32rem, 1fr);
 	grid-template-areas:
-		"player player player"
-		"navbar navbar navbar"
-		"sidebar sidebar sidebar";
+		"player"
+		"navbar"
+		"sidebar";
 }
 
 .sidebar {
@@ -51,22 +51,47 @@ body {
 	padding: 1.6rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
 	.layout {
-		/* padding-right: 8rem; */
 		color: #fff;
 		display: grid;
+		grid-template-columns: 20rem 38rem 64rem;
 		grid-template-areas: "navbar sidebar player";
+		justify-content: space-between;
+	}
+
+	.sidebar {
+		padding: 3.2rem 1rem;
+	}
+
+	.player {
+		padding: 10rem 10rem;
+	}
+
+	.navbar {
+		padding: 3.2rem;
+		position: sticky;
+		top: 0;
+		bottom: 3.2rem;
+		height: 100vh;
+	}
+}
+
+@media screen and (min-width: 980px) and (max-width: 1200px) {
+	.layout {
+		color: #fff;
+		display: grid;
+		grid-template-columns: 20rem 32rem 48rem;
+		grid-template-areas: "navbar sidebar player .";
+		justify-content: center;
 	}
 
 	.sidebar {
 		padding: 3.2rem 1.6rem;
-		min-width: 32rem;
 	}
 
 	.player {
-		padding: 10rem 16rem;
-		min-width: minmax(48rem, 1fr);
+		padding: 8rem;
 	}
 
 	.navbar {
