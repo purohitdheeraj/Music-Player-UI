@@ -27,7 +27,6 @@ body {
 .layout {
 	color: #fff;
 	display: grid;
-	min-height: 100vh;
 	grid-template-columns: minmax(32rem, 1fr);
 	grid-template-areas:
 		"player"
@@ -38,12 +37,13 @@ body {
 .sidebar {
 	grid-area: sidebar;
 	padding: 1.6rem;
+	min-height: 50vh;
+	border: 1px solid;
 }
 
 .navbar {
 	grid-area: navbar;
 	padding: 1.6rem;
-	padding-bottom: 0;
 }
 
 .player {

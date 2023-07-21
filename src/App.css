@@ -39,8 +39,9 @@
 .navbar nav ul {
 	display: flex;
 	margin-top: 3.2rem;
-	justify-content: space-between;
+	/* justify-content: space-between; */
 	padding-bottom: 0;
+	flex-wrap: wrap;
 }
 
 .navbar {
@@ -167,6 +168,7 @@ img {
 .player {
 	display: flex;
 	flex-direction: column;
+	/* padding-bottom: 4rem; */
 }
 
 .player h2 {
@@ -194,9 +196,17 @@ img {
 	margin-top: 3.2rem;
 	display: flex;
 	justify-content: space-between;
+	flex-wrap: wrap;
 }
 
-@media (min-width: 1024px) {
+.player,
+.sidebar,
+.navbar {
+	width: 80%;
+	justify-self: center;
+}
+
+@media (min-width: 980px) {
 	.navbar ul {
 		flex-direction: column;
 	}
@@ -204,5 +214,11 @@ img {
 	.navbar {
 		display: flex;
 		flex-direction: column;
+	}
+
+	.player,
+	.sidebar,
+	.navbar {
+		width: 100%;
 	}
 }
