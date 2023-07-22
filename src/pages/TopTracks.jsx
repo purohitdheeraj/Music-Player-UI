@@ -1,5 +1,5 @@
 function TopTracks() {
-	return <div>TopTracks</div>;
+	return <div className="page-heading">Top Tracks</div>;
 }
 
 export default TopTracks;

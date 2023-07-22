@@ -1,5 +1,5 @@
 function RecentlyPlayed() {
-	return <div>RecentlyPlayed</div>;
+	return <div className="page-heading">RecentlyPlayed</div>;
 }
 
 export default RecentlyPlayed;
