@@ -20,6 +20,7 @@ body {
 	margin: 0 auto;
 	max-width: 158rem;
 	font-family: "Basier Circle", sans-serif;
+	background: linear-gradient(#201606, #000000);
 }
 
 /* layout container */

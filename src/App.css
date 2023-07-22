@@ -8,6 +8,9 @@
 /* logo */
 .navbar .logo-wrapper {
 	max-width: 14rem;
+	/* display: none; */
+	margin: 0 auto;
+	order: -2;
 }
 
 .logo-image {
@@ -39,13 +42,15 @@
 .navbar nav ul {
 	display: flex;
 	margin-top: 3.2rem;
-	/* justify-content: space-between; */
+	justify-content: space-between;
 	padding-bottom: 0;
 	flex-wrap: wrap;
 }
 
 .navbar {
 	padding-bottom: 0;
+	display: flex;
+	flex-direction: column;
 }
 
 .navbar ul {
@@ -64,6 +69,14 @@
 	margin-top: auto;
 	width: 48px;
 	height: 48px;
+}
+
+.navbar-actions-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	order: -1;
+	margin-bottom: 3.6rem;
 }
 
 .avatar-wrapper img {
@@ -86,13 +99,13 @@ img {
 /* Sidebar */
 
 .foruser-page {
-	/* border: 1px solid; */
 	height: 100%;
 	display: flex;
 	flex-direction: column;
 }
 
-.foruser-page .page-heading {
+.foruser-page .page-heading,
+.page-heading {
 	margin-top: 0;
 	font-size: 3.2rem;
 	line-height: 36px;
@@ -232,10 +245,6 @@ input[type="range"]::-webkit-slider-thumb {
 
 /* controls */
 
-.player-controls {
-
-}
-
 .btn {
 	width: 4.8rem;
 	height: 4.8rem;
@@ -247,12 +256,17 @@ input[type="range"]::-webkit-slider-thumb {
 	display: grid;
 	place-content: center;
 	cursor: pointer;
+	color: #fff;
 }
 
-.primary-actions{
+.btn-show-navbar{
+	color: #ccc;
+	font-size: 1.4rem;
+}
+
+.primary-actions {
 	display: flex;
 	gap: 2rem;
-	/* border: 1px solid; */
 }
 
 .btn img {
@@ -260,19 +274,20 @@ input[type="range"]::-webkit-slider-thumb {
 	height: 2.4rem;
 }
 
-.btn-play img{
+.btn-play img {
 	width: 4.8rem;
 	height: 4.8rem;
 }
 
-.btn-prev,.btn-next{
+.btn-prev,
+.btn-next {
 	background: none;
 }
 
-.btn-prev img, .btn-next img{
+.btn-prev img,
+.btn-next img {
 	width: 3.2rem;
 	height: 3.2rem;
-	/* border: 1px solid #fff; */
 }
 
 @media (min-width: 980px) {
@@ -289,5 +304,19 @@ input[type="range"]::-webkit-slider-thumb {
 	.sidebar,
 	.navbar {
 		width: 100%;
+	}
+
+	.navbar-actions-wrapper {
+		margin-top: auto;
+		order: 1;
+	}
+
+	.show-navbar {
+		display: none;
+	}
+
+	.navbar .logo-wrapper {
+		display: block;
+		margin: 0;
 	}
 }
