@@ -100,7 +100,7 @@ function Player() {
 
 			<div className="time">
 				<span>{formatTime(currentTime)}</span>
-				<span>{formatTime(duration)}</span>
+				<span>{formatTime(currentSong.duration)}</span>
 			</div>
 
 			<div className="player-controls">

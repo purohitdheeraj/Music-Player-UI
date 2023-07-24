@@ -17,10 +17,23 @@ export const GlobalDataProvider = ({ children }) => {
 		(songs[0] && songs[0]._id) || ""
 	);
 
-	const audioRef = useRef();
+	const audioRef = useRef(null);
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [currentTrackIndex, setCurrentTrackIndex] =
 		useState(0);
+
+	const handlePlayBackChange = () => {
+		if (audioRef.current) {
+			// Stop the current audio when switching to the next song
+			audioRef.current.pause();
+			// Reset the currentTime to 0 for the new song
+			audioRef.current.currentTime = 0;
+			// Start playing the new song
+			// audioRef.current.play();
+			// playPauseHandler();
+			setIsPlaying(false);
+		}
+	};
 
 	const playPauseHandler = () => {
 		if (isPlaying) {
@@ -39,6 +52,7 @@ export const GlobalDataProvider = ({ children }) => {
 			(prevIndex) => (prevIndex + 1) % songs.length
 		);
 		setCurrentSongId(songs[newTrackIndex]._id);
+		handlePlayBackChange();
 	};
 
 	const prevTrackHandler = () => {
@@ -51,6 +65,7 @@ export const GlobalDataProvider = ({ children }) => {
 			prevIndex === 0 ? songs.length - 1 : prevIndex - 1
 		);
 		setCurrentSongId(songs[newTrackIndex]._id);
+		handlePlayBackChange();
 	};
 
 	const { loading, data } = useQuery(GET_ALL_SONGS, {
@@ -85,7 +100,8 @@ export const GlobalDataProvider = ({ children }) => {
 				playPauseHandler,
 				currentTrackIndex,
 				isPlaying,
-				setIsPlaying
+				setIsPlaying,
+				handlePlayBackChange,
 			}}
 		>
 			{children}

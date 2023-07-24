@@ -10,6 +10,7 @@ function ForUser() {
 		loading: isLoading,
 		setCurrentSongId,
 		getCurrentSong,
+		handlePlayBackChange,
 	} = useGlobalData();
 	const [searchSong, setSearchSong] = useState("");
 	const [filteredData, setFilteredData] = useState([]);
@@ -66,7 +67,10 @@ function ForUser() {
 								? "currentSong"
 								: ""
 						}`}
-						onClick={() => setCurrentSongId(song._id)}
+						onClick={() => {
+							setCurrentSongId(song._id);
+							handlePlayBackChange();
+						}}
 					>
 						<img
 							className="music-image"
