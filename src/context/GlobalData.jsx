@@ -3,6 +3,7 @@ import {
 	useContext,
 	useEffect,
 	useState,
+	useRef,
 } from "react";
 import PropTypes from "prop-types";
 import { useQuery } from "@apollo/client";
@@ -16,13 +17,48 @@ export const GlobalDataProvider = ({ children }) => {
 		(songs[0] && songs[0]._id) || ""
 	);
 
+	const audioRef = useRef();
+	const [isPlaying, setIsPlaying] = useState(false);
+	const [currentTrackIndex, setCurrentTrackIndex] =
+		useState(0);
+
+	const playPauseHandler = () => {
+		if (isPlaying) {
+			audioRef.current.pause();
+		} else {
+			audioRef.current.play();
+		}
+		setIsPlaying(!isPlaying);
+	};
+
+	const nextTrackHandler = () => {
+		const newTrackIndex =
+			(currentTrackIndex + 1) % songs.length;
+
+		setCurrentTrackIndex(
+			(prevIndex) => (prevIndex + 1) % songs.length
+		);
+		setCurrentSongId(songs[newTrackIndex]._id);
+	};
+
+	const prevTrackHandler = () => {
+		const newTrackIndex =
+			currentTrackIndex === 0
+				? songs.length - 1
+				: currentTrackIndex - 1;
+
+		setCurrentTrackIndex((prevIndex) =>
+			prevIndex === 0 ? songs.length - 1 : prevIndex - 1
+		);
+		setCurrentSongId(songs[newTrackIndex]._id);
+	};
+
 	const { loading, data } = useQuery(GET_ALL_SONGS, {
 		variables: { playlistId: 1 },
 	});
 
 	useEffect(() => {
 		if (!loading) {
-			console.log(data);
 			setSongs(data.getSongs);
 		}
 	}, [loading, data]);
@@ -43,6 +79,12 @@ export const GlobalDataProvider = ({ children }) => {
 				setCurrentSongId,
 				currentSongId,
 				getCurrentSong,
+				audioRef,
+				prevTrackHandler,
+				nextTrackHandler,
+				playPauseHandler,
+				currentTrackIndex,
+				isPlaying,
 			}}
 		>
 			{children}

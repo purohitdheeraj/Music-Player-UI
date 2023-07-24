@@ -43,7 +43,10 @@ function ForUser() {
 	const handleChange = (e) => {
 		const { value } = e.target;
 		const filteredSongs = songs.filter((song) => {
-			return song.title.toLowerCase().includes(value);
+			return (
+				song.title.toLowerCase().includes(value) ||
+				song.artist.toLowerCase().includes(value)
+			);
 		});
 		setFilteredData(filteredSongs);
 		setSearchSong(value);

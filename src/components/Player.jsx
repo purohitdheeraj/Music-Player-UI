@@ -2,17 +2,26 @@ import { useState } from "react";
 import more from "../assets/more.svg";
 import prev from "../assets/prev.svg";
 import play from "../assets/play.svg";
+import pause from "../assets/pauseS.svg";
 import next from "../assets/next.svg";
 import sound from "../assets/sound.svg";
-// import cover from "../assets/cover.png";
 import { useGlobalData } from "../context/GlobalData";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
 function Player() {
 	const [sliderValue, setSliderValue] = useState(0);
-	const { getCurrentSong, loading: isLoading } =
-		useGlobalData();
+	const {
+		songs,
+		getCurrentSong,
+		loading: isLoading,
+		audioRef,
+		prevTrackHandler,
+		nextTrackHandler,
+		playPauseHandler,
+		currentTrackIndex,
+		isPlaying,
+	} = useGlobalData();
 
 	const loadingSkeleton = (
 		<section className="player">
@@ -52,6 +61,10 @@ function Player() {
 			</div>
 
 			<div className="slider-wrapper">
+				<audio
+					ref={audioRef}
+					src={songs[currentTrackIndex].url}
+				></audio>
 				<input
 					type="range"
 					name="seek"
@@ -78,6 +91,7 @@ function Player() {
 					<button
 						className="btn btn-prev"
 						aria-label="prevoius music"
+						onClick={prevTrackHandler}
 					>
 						<span className="sr-only">Previous</span>
 						<span>
@@ -87,17 +101,29 @@ function Player() {
 
 					<button
 						aria-label="play music"
-						className="btn btn-play"
+						className={`btn ${
+							isPlaying ? "btn-pause" : "btn-play"
+						} `}
+						onClick={playPauseHandler}
 					>
 						<span className="sr-only">Play</span>
 						<span>
-							<img src={play} alt="Play music-btn" />
+							{isPlaying ? (
+								<img
+									src={pause}
+									className="pause-img"
+									alt="Pause music-btn"
+								/>
+							) : (
+								<img src={play} alt="Play music-btn" />
+							)}
 						</span>
 					</button>
 
 					<button
 						aria-label="next music"
 						className="btn btn-next"
+						onClick={nextTrackHandler}
 					>
 						<span className="sr-only">next</span>
 						<span>
