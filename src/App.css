@@ -147,8 +147,9 @@ img {
 .music-list-item {
 	display: flex;
 	align-items: center;
-	padding: 1.6rem 0;
+	padding: 1.6rem;
 	gap: 1.6rem;
+	cursor: pointer;
 }
 
 .music-image {
@@ -259,7 +260,7 @@ input[type="range"]::-webkit-slider-thumb {
 	color: #fff;
 }
 
-.btn-show-navbar{
+.btn-show-navbar {
 	color: #ccc;
 	font-size: 1.4rem;
 }
@@ -288,6 +289,11 @@ input[type="range"]::-webkit-slider-thumb {
 .btn-next img {
 	width: 3.2rem;
 	height: 3.2rem;
+}
+
+.currentSong {
+	border-radius: 8px;
+	background: rgba(255, 255, 255, 0.08);
 }
 
 @media (min-width: 980px) {
