@@ -280,7 +280,12 @@ input[type="range"]::-webkit-slider-thumb {
 	height: 4.8rem;
 }
 
-.btn-pause{
+.time {
+	display: flex;
+	justify-content: space-between;
+}
+
+.btn-pause {
 	background: #fff;
 }
 

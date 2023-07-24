@@ -85,6 +85,7 @@ export const GlobalDataProvider = ({ children }) => {
 				playPauseHandler,
 				currentTrackIndex,
 				isPlaying,
+				setIsPlaying
 			}}
 		>
 			{children}

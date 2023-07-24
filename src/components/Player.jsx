@@ -10,7 +10,6 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
 function Player() {
-	const [sliderValue, setSliderValue] = useState(0);
 	const {
 		songs,
 		getCurrentSong,
@@ -22,6 +21,31 @@ function Player() {
 		currentTrackIndex,
 		isPlaying,
 	} = useGlobalData();
+
+	const [currentTime, setCurrentTime] = useState(0);
+	const [duration, setDuration] = useState(0);
+
+	const timeUpdateHandler = (e) => {
+		setCurrentTime(e.target.currentTime);
+	};
+
+	const loadedDataHandler = (e) => {
+		setDuration(e.target.duration);
+	};
+
+	const formatTime = (timeInSeconds) => {
+		const minutes = Math.floor(timeInSeconds / 60);
+		const seconds = Math.floor(timeInSeconds % 60);
+		return `${minutes}:${
+			seconds < 10 ? "0" : ""
+		}${seconds}`;
+	};
+
+	const handleSeekChange = (e) => {
+		const seekTime = parseFloat(e.target.value);
+		audioRef.current.currentTime = seekTime;
+		setCurrentTime(seekTime);
+	};
 
 	const loadingSkeleton = (
 		<section className="player">
@@ -41,11 +65,6 @@ function Player() {
 		</section>
 	);
 
-	const handleSlider = (e) => {
-		console.log(e.target.value);
-		setSliderValue(e.target.value);
-	};
-
 	const currentSong = getCurrentSong();
 
 	const playerEl = currentSong && (
@@ -64,16 +83,24 @@ function Player() {
 				<audio
 					ref={audioRef}
 					src={songs[currentTrackIndex].url}
+					onTimeUpdate={timeUpdateHandler}
+					onLoadedData={loadedDataHandler}
 				></audio>
 				<input
 					type="range"
 					name="seek"
-					min={0}
-					max={100}
-					value={sliderValue}
-					onChange={handleSlider}
 					className="input input-seek-player"
+					value={currentTime}
+					min="0"
+					max={duration || 0}
+					step="0.01"
+					onChange={handleSeekChange}
 				/>
+			</div>
+
+			<div className="time">
+				<span>{formatTime(currentTime)}</span>
+				<span>{formatTime(duration)}</span>
 			</div>
 
 			<div className="player-controls">
