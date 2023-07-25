@@ -3,8 +3,7 @@ import logo from "../assets/logo.png";
 import profile from "../assets/dheeraj-profile.jpg";
 import PropTypes from "prop-types";
 
-function Navbar(props) {
-	const { toggleNavbar, showNavbar } = props;
+function Navbar() {
 	return (
 		<aside className="navbar">
 			<div className="logo-wrapper">
@@ -75,14 +74,14 @@ function Navbar(props) {
 					</a>
 				</div>
 
-				<div className="show-navbar">
+				{/* <div className="show-navbar">
 					<button
 						onClick={toggleNavbar}
 						className="btn btn-show-navbar"
 					>
 						{showNavbar ? "hide" : "show"}
 					</button>
-				</div>
+				</div> */}
 			</div>
 		</aside>
 	);

@@ -29,9 +29,9 @@ export const GlobalDataProvider = ({ children }) => {
 			// Reset the currentTime to 0 for the new song
 			audioRef.current.currentTime = 0;
 			// Start playing the new song
-			// audioRef.current.play();
+			audioRef.current.play();
 			// playPauseHandler();
-			setIsPlaying(false);
+			setIsPlaying(true);
 		}
 	};
 
